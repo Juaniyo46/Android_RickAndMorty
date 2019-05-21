@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RickAndMorty</string>
+    <string name="get">Obtener datos</string>
+    <string name="tvPrueba">prueba</string>
+    <string name="id">ID:</string>
+    <string name="titulo">Título:</string>
+    <string name="contenido">Contenido:</string>
+    <string name="nombre">Nombre</string>
+</resources>
