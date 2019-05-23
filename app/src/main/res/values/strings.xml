@@ -5,5 +5,11 @@
     <string name="id">ID:</string>
     <string name="titulo">Título:</string>
     <string name="contenido">Contenido:</string>
-    <string name="nombre">Nombre</string>
+    <string name="nombre">Nombre:</string>
+    <string name="estado">Estado:</string>
+    <string name="especie">Especie:</string>
+    <string name="tipo">Tipo:</string>
+    <string name="genero">Género:</string>
+    <string name="origen">Origen:</string>
+    <string name="url">URL:</string>
 </resources>
