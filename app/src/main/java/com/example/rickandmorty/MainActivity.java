@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.rickandmorty.API.Character;
+import com.example.rickandmorty.API.Feed;
+import com.example.rickandmorty.API.Result;
 import com.example.rickandmorty.Adapter.CharacterAdapter;
 import com.example.rickandmorty.Retrofit.RetrofitClient;
 import com.example.rickandmorty.Retrofit.RetrofitService;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private final String baseUrl ="https://rickandmortyapi.com/";
 
     RecyclerView rvCharacters;
-    List<Character> characterList = new ArrayList<>();
+    List<Result> characterList = new ArrayList<>();
 
     Button getBtn;
 
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
                 rvCharacters.setLayoutManager(llm);
 
-                final CharacterAdapter[] adapter = {new CharacterAdapter(characterList)};
+                final CharacterAdapter[] adapter = {new CharacterAdapter(v.getContext(),characterList)};
                 rvCharacters.setAdapter(adapter[0]);
 
                 DividerItemDecoration itemDecoration = new DividerItemDecoration(rvCharacters.getContext(),llm.getOrientation());
@@ -52,19 +54,19 @@ public class MainActivity extends AppCompatActivity {
 
                 RetrofitService retrofitService = RetrofitClient.getClient(baseUrl).create(RetrofitService.class);
 
-                Call<List<Character>> listCall = retrofitService.getCharacters();
-                listCall.enqueue(new Callback<List<Character>>() {
+                Call<Feed> listCall = retrofitService.getData();
+                listCall.enqueue(new Callback<Feed>() {
                     @Override
-                    public void onResponse(Call<List<Character>> call, Response<List<Character>> response) {
+                    public void onResponse(Call<Feed> call, Response<Feed> response) {
                         if (response.isSuccessful()){
-                            characterList = response.body();
-                            adapter[0] = new CharacterAdapter(characterList);
-                            rvCharacters.setAdapter(adapter[0]);
+                            Feed feed = response.body();
+                            characterList.addAll(feed.getResults());
+                            adapter[0].notifyDataSetChanged();
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<List<Character>> call, Throwable t) {
+                    public void onFailure(Call<Feed> call, Throwable t) {
                         Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
