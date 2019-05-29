@@ -139,70 +139,7 @@
         android:textSize="20dp"/>
 
 
-    <TextView
-        android:id="@+id/tvOrigin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvGender"
-        android:layout_marginTop="9dp"
-        android:text="@string/origen"
-        android:textSize="20dp"
-        android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/origin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tvPrueba"
-        android:layout_toRightOf="@id/tvOrigin"
-        android:layout_below="@id/gender"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="20dp"/>
-
-
-    <TextView
-        android:id="@+id/tvUrl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvOrigin"
-        android:layout_marginTop="9dp"
-        android:text="@string/url"
-        android:textSize="20dp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tvPrueba"
-        android:layout_toRightOf="@id/tvUrl"
-        android:layout_below="@id/origin"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="20dp"/>
-
-
-    <TextView
-        android:id="@+id/tvLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvOrigin"
-        android:layout_marginTop="9dp"
-        android:text="@string/url"
-        android:textSize="20dp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tvPrueba"
-        android:layout_toRightOf="@id/tvUrl"
-        android:layout_below="@id/origin"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="20dp"/>
 
 
 

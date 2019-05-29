@@ -81,6 +81,10 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
             String gender = character.getGender();
             tvGender.setText(gender);
 
+
+
+
+
             Glide.with(context).load(character.getImage())
                     .into(ivImage);
 

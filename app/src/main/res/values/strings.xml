@@ -12,4 +12,5 @@
     <string name="genero">Género:</string>
     <string name="origen">Origen:</string>
     <string name="url">URL:</string>
+    <string name="location">Ubicación:</string>
 </resources>
